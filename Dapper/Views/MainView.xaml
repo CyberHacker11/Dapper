@@ -1,0 +1,87 @@
+﻿<Window x:Class="Dapper.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dapper.Views"
+        mc:Ignorable="d"
+        Title="MainView" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <GroupBox Grid.Row="0" Header="Category" FontWeight="Bold" FontFamily="Calibri" FontSize="20" Margin="5">
+            <DataGrid 
+                SelectionChanged="dataGridCategory_SelectionChanged"
+                x:Name="dataGridCategory" 
+                Margin="3" 
+                IsReadOnly="True" 
+                SelectionMode="Single" 
+                SelectionUnit="FullRow" 
+                FontSize="14" 
+                FontWeight="Normal" 
+                BorderThickness="0" 
+                ClipToBounds="True">
+            </DataGrid>
+        </GroupBox>
+        
+        <GroupBox Grid.Column="1" Grid.Row="0" Header="Product" FontWeight="Bold" FontFamily="Calibri" FontSize="20" Margin="5">
+            <DataGrid 
+                x:Name="dataGridProduct" 
+                Margin="3" 
+                IsReadOnly="True" 
+                SelectionMode="Single" 
+                BorderThickness="0"
+                SelectionUnit="FullRow">
+            </DataGrid>
+        </GroupBox>
+        
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnAddCategory" Content="Add" FontSize="16" Margin="5" Click="BtnAddCategory_Click" FontWeight="Bold" FontFamily="Calibri"/>
+            <Grid Grid.Column="1">
+                <Button x:Name="btnDeleteCategory" Content="Delete" FontSize="16" Margin="5" Click="BtnDeleteCategory_Click" FontWeight="Bold" FontFamily="Calibri"/>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Button x:Name="btnUpdateCategory" Content="Update" FontSize="16" Margin="5" Click="BtnUpdateCategory_Click" FontWeight="Bold" FontFamily="Calibri"/>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Button x:Name="btnRefreshCategory" Content="Refresh" FontSize="16" Margin="5" Click="BtnRefreshCategory_Click" FontWeight="Bold" FontFamily="Calibri"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnAddProduct" Content="Add" FontSize="16" Margin="5" Click="BtnAddProduct_Click" FontWeight="Bold" FontFamily="Calibri"/>
+            <Grid Grid.Column="1">
+                <Button x:Name="btnDeleteProduct" Content="Delete" FontSize="16" Margin="5" Click="BtnDeleteProduct_Click" FontWeight="Bold" FontFamily="Calibri"/>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Button x:Name="btnUpdateProduct" Content="Update" FontSize="16" Margin="5" Click="BtnUpdateProduct_Click" FontWeight="Bold" FontFamily="Calibri"/>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Button x:Name="btnRefreshProduct" Content="Refresh" FontSize="16" Margin="5" Click="BtnRefreshProduct_Click" FontWeight="Bold" FontFamily="Calibri"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
